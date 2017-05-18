@@ -1,0 +1,18 @@
+@import models.Neighbour
+@(form: Form[Neighbour])
+
+@import b3.vertical.fieldConstructor
+
+
+@main("Cadastro de Vizinho") {
+  @b3.form(routes.NeighbourController.save) {
+    <h1>Cadastro de Vizinho</h1>
+    @b3.text(form("unit"), '_label -> "AP")
+    @b3.number(form("credit"), '_label -> "Créditos")
+    @b3.text(form("phone"), '_label -> "Telefone")
+
+    @b3.submit('class -> "btn btn-primary") { Cadastrar }
+
+
+  }
+}
